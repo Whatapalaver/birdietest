@@ -1,0 +1,22 @@
+{
+  "name": "birdietest",
+  "version": "1.0.0",
+  "description": "Birdie Tech Test =========",
+  "main": "index.js",
+  "scripts": {
+    "start": "nf start",
+    "backend": "nodemon backend/bin/server",
+    "frontend": "parcel frontend/src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Whatapalaver/birdietest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Whatapalaver/birdietest/issues"
+  },
+  "homepage": "https://github.com/Whatapalaver/birdietest#readme"
+}

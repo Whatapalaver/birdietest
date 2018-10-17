@@ -26,3 +26,17 @@ Review Goals
 - A good overall display of the Single Responsibility Principle
 - Strong overall naming conventions
 
+Coding Challenges
+-----
+
+API  
+*I spent some time pondering how my API should be structured in order to allow React to select specific field types. Should I?*
+
+- create one massive dump of db data
+- have a separate get request for each potential field name
+- pass a param back to my SQL query
+
+*I suspect the latter is going to be the correct approach but to kick off the process I started with an API that hosted the stats solely for education.*
+
+Testing  
+*As I am still fairly unfamiliar with much of the tech stack I chose not to follow a TDD approach to completing the test. Given that there was limited logic in the challenge I felt this was acceptable although I do plan to retrospectively add tests to future proof the application and to provide some assurance that everything works as desired.*

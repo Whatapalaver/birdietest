@@ -10,9 +10,9 @@ const sql = 'SELECT DISTINCT education AS name, COUNT(*) AS countOf, ROUND(AVG(a
 app.get('/api', function (req, res) {
   connection.connect();
   connection.query(sql, function(err, recordset) {
-          if(err) console.log(err);
-          res.end(JSON.stringify(recordset)); // Result in JSON format
-      })
-  });
+    if(err) console.log(err);
+    res.end(JSON.stringify(recordset)); // Result in JSON format
+  })
+});
 
 module.exports = app;
