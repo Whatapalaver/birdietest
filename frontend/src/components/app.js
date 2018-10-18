@@ -1,21 +1,21 @@
-import React from 'react'
-import Navbar from './Navigation/Navbar'
-import Header from './Header'
-import Footer from './Footer'
-import FieldSelector from './FieldSelector'
-import ResultsTable from './ResultsTable'
+import React, { Component } from 'react';
+import './App.css'
 
-class App extends React.Component {
+import Navbar from './Navigation/Navbar';
+import Footer from './Footer';
+import FieldSelector from './FieldSelector';
+import ResultsTable from './ResultsTable';
+
+class App extends Component {
   constructor() {
     super()
   }
   
   render() {
     return (
-      <div>
-        <h2>Can you see this?</h2>
+      <div className='tc dark-red bg-washed-green pa2'>
+        <h2 className='mt1 mb0 avenir i f1 pt2 fw6'>Birdie Tech Test</h2>
         <Navbar />
-        <Header />
         <FieldSelector />
         <ResultsTable />
         <Footer />
