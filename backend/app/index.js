@@ -1,18 +1,19 @@
 const express = require('express');
 const app = express();
+const dataAPI = require('../api/data');
+const fieldAPI = require('../api/fields');
 const connection = require('../databasePool');
 
 // move this to the api folder when you have a better idea of api structure
 // replace with an app.use which will direct to the new api router
 
-const sql = 'SELECT DISTINCT education AS name, COUNT(*) AS countOf, ROUND(AVG(age),1) AS avAge FROM census_learn_sql WHERE education IS NOT NULL GROUP BY education ORDER BY countOf DESC'
+connection.connect();
+app.use('/api/data', dataAPI)
+app.use('/api/fields', fieldAPI)
 
-app.get('/api', function (req, res) {
-  connection.connect();
-  connection.query(sql, function(err, recordset) {
-    if(err) console.log(err);
-    res.end(JSON.stringify(recordset)); // Result in JSON format
-  })
+app.use(function(err, req, res, next){
+  // we send the error with an error message
+  res.status(422).send({error: err.message});
 });
 
 module.exports = app;
