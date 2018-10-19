@@ -23280,21 +23280,79 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FieldSelector = function FieldSelector() {
-  return _react.default.createElement("div", {
-    className: "pa2 avenir b--silver br3 "
-  }, _react.default.createElement("select", {
-    className: "hot-pink bg-washed-yellow fw6"
-  }, _react.default.createElement("option", {
-    value: "volvo"
-  }, "Education"), _react.default.createElement("option", {
-    value: "saab"
-  }, "Employment"), _react.default.createElement("option", {
-    value: "mercedes"
-  }, "City"), _react.default.createElement("option", {
-    value: "audi"
-  }, "Children")));
-};
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var options = [{
+  value: 'education',
+  label: 'Education'
+}, {
+  value: 'sex',
+  label: 'Sex'
+}, {
+  value: 'employment',
+  label: 'Employment'
+}];
+
+var FieldSelector =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(FieldSelector, _React$Component);
+
+  function FieldSelector(props) {
+    var _this;
+
+    _classCallCheck(this, FieldSelector);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FieldSelector).call(this, props));
+    _this.state = {
+      value: 'education',
+      fields: []
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(FieldSelector, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({
+        value: event.target.value
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("select", {
+        className: "hot-pink bg-washed-yellow fw6",
+        value: this.state.value,
+        onChange: this.handleChange
+      }, options.map(function (field) {
+        return _react.default.createElement("option", {
+          key: field.key,
+          value: field.value
+        }, field.value);
+      }), ";");
+    }
+  }]);
+
+  return FieldSelector;
+}(_react.default.Component);
 
 var _default = FieldSelector;
 exports.default = _default;
@@ -23313,7 +23371,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ResultsTable = function ResultsTable() {
   return _react.default.createElement("div", null, _react.default.createElement("table", {
     className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
-  }, _react.default.createElement("tr", {
+  }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
     className: "striped--light-gray bb b-moon-gray"
   }, _react.default.createElement("th", {
     className: "pv2 ph3 tl f6 fw6 ttu"
@@ -23337,7 +23395,7 @@ var ResultsTable = function ResultsTable() {
     className: "pv2 ph3"
   }, "1267"), _react.default.createElement("td", {
     className: "pv2 ph3"
-  }, "44"))));
+  }, "44")))));
 };
 
 var _default = ResultsTable;
@@ -23401,7 +23459,7 @@ function (_Component) {
       return _react.default.createElement("div", {
         className: "tc dark-red bg-washed-green pa2"
       }, _react.default.createElement("h2", {
-        className: "mt1 mb0 avenir i fw3 f1 pt2"
+        className: "mt1 mb0 avenir i f1 pt2 fw6"
       }, "Birdie Tech Test"), _react.default.createElement(_Navbar.default, null), _react.default.createElement(_FieldSelector.default, null), _react.default.createElement(_ResultsTable.default, null), _react.default.createElement(_Footer.default, null));
     }
   }]);
@@ -23435,6 +23493,8 @@ _reactDom.default.render(_react.default.createElement(_App.default, null), docum
 if (module.hot) {
   module.hot.accept();
 }
+
+;
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/App":"components/App.js","tachyons":"../node_modules/tachyons/css/tachyons.css"}],"../../../../../../.nvm/versions/node/v8.12.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -23462,7 +23522,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61306" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51086" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
