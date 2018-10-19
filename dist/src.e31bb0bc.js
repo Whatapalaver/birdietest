@@ -23299,16 +23299,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 var URL = 'http://localhost:8082/api/fields';
-var options = [{
-  value: 'education',
-  label: 'Education'
-}, {
-  value: 'sex',
-  label: 'Sex'
-}, {
-  value: 'employment',
-  label: 'Employment'
-}];
 
 var FieldSelector =
 /*#__PURE__*/
@@ -23323,8 +23313,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(FieldSelector).call(this, props));
     _this.state = {
       value: 'education',
-      fields: [],
-      result: null
+      fields: []
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.populateFields = _this.populateFields.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -23340,9 +23329,9 @@ function (_React$Component) {
     }
   }, {
     key: "populateFields",
-    value: function populateFields(result) {
+    value: function populateFields(fields) {
       this.setState({
-        result: result
+        fields: fields
       });
     }
   }, {
@@ -23352,24 +23341,25 @@ function (_React$Component) {
 
       fetch(URL).then(function (response) {
         return response.json();
-      }).then(function (result) {
-        return _this2.populateFields(result);
-      }).then(console.log('results: ', this.state)).catch(function (error) {
+      }).then(function (fields) {
+        return _this2.populateFields(fields);
+      }).catch(function (error) {
         return error;
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var options = this.state.fields;
       return _react.default.createElement("select", {
         className: "hot-pink bg-washed-yellow fw6",
         value: this.state.value,
         onChange: this.handleChange
-      }, options.map(function (field) {
+      }, options.map(function (field, index) {
         return _react.default.createElement("option", {
-          key: field.key,
-          value: field.value
-        }, field.value);
+          key: index,
+          value: field.Column_name
+        }, field.Column_name);
       }), ";");
     }
   }]);
@@ -23545,7 +23535,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49947" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53826" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

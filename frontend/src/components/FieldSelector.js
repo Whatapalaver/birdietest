@@ -2,14 +2,6 @@ import React from 'react'
 
 const URL = 'http://localhost:8082/api/fields'
 
-// const options = [
-//   { value: 'education', label: 'Education' },
-//   { value: 'sex', label: 'Sex' },
-//   { value: 'employment', label: 'Employment'},
-// ];
-
-
-
 class FieldSelector extends React.Component {
   constructor(props) {
     super(props);
@@ -43,8 +35,8 @@ class FieldSelector extends React.Component {
         value={this.state.value}
         
         onChange={this.handleChange}>
-        {options.map(field =>
-          <option key={field.key} value={field.index}>{field.Column_name}</option>
+        {options.map((field, index) =>
+          <option key={index} value={field.Column_name}>{field.Column_name}</option>
           )};
       </select>
     );
