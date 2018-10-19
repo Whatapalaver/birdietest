@@ -12,6 +12,8 @@ A database visualisation exercise
 4. Statistics displayed to 100 with a indication of non-displayed rows
 5. Must be a single page application with no reload required as variable selected
 
+![Birdie Tech test Implementation](Birdie_tech_test.png)
+
 Review Goals
 -----
 
