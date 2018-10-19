@@ -36,7 +36,18 @@ API
 - have a separate get request for each potential field name
 - pass a param back to my SQL query
 
-*I suspect the latter is going to be the correct approach but to kick off the process I started with an API that hosted the stats solely for education.*
+*I was pretty sure that the latter was going to be the right approach and went with this option. The dropdown fieldname selector drives a call to the API in the URL format of /api/data/fieldname*
+
+REACT
+*Interesting stuff. The tricky bits were dealing with unique keys so that the virtual DOM could efficiently test for changes. Also passing props down so the main table API would refresh with the select change.*
 
 Testing  
 *As I am still fairly unfamiliar with much of the tech stack I chose not to follow a TDD approach to completing the test. Given that there was limited logic in the challenge I felt this was acceptable although I do plan to retrospectively add tests to future proof the application and to provide some assurance that everything works as desired.*
+
+Outstanding Issues
+-----
+
+- The API calls are soooooo slow. It takes forever to load the table data. I don't know if that is to be expected or whether the delay is down to errors in my code. Perhps a single API call would be more efficient afterall.
+- My API call to extract all the fieldnames for use with the Select component also includes fieldnames with no data. I should amend the query to exclude these.
+- I haven't handled the restriction to 100 rows return
+- I haven't used Redux and at the moment I am not sure what I would use it for

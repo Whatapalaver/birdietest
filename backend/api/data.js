@@ -8,6 +8,7 @@ router.get('/', function (req, res) {
   let field = 'education'
   const sql = `SELECT DISTINCT ${field} AS name, COUNT(*) AS countOf, ROUND(AVG(age),1) AS avAge FROM census_learn_sql WHERE ${field} IS NOT NULL GROUP BY ${field} ORDER BY countOf DESC`
 
+
   // connection.connect();
   connection.query(sql, function(err, recordset) {
     if(err) console.log(err);
