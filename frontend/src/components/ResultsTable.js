@@ -7,11 +7,13 @@ class ResultsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [{
-        "name": "Loading......",
-        "countOf": 0,
-        "avAge": 0
-        }]
+      data: [
+        // {
+        // "name": "Loading......",
+        // "countOf": 0,
+        // "avAge": 0
+        // }
+      ]
     };
     
     this.populateData = this.populateData.bind(this);

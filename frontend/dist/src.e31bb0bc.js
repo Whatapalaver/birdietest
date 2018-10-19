@@ -23316,15 +23316,15 @@ function (_React$Component) {
           key: data.name
         }, _react.default.createElement("td", {
           className: "pv2 ph3",
-          key: data.name + '_td',
+          key: data.name + data.countOf,
           value: data.name
         }, data.name), _react.default.createElement("td", {
           className: "pv2 ph3 tr",
-          key: data.countOf + '_td',
+          key: data.countOf + data.name,
           value: data.countOf
         }, data.countOf), _react.default.createElement("td", {
           className: "pv2 ph3 tr",
-          key: data.avAge + '_td',
+          key: data.avAge + data.name,
           value: data.avAge
         }, data.avAge));
       });
@@ -23383,11 +23383,12 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ResultsTable).call(this, props));
     _this.state = {
-      data: [{
-        "name": "Loading......",
-        "countOf": 0,
-        "avAge": 0
-      }]
+      data: [// {
+        // "name": "Loading......",
+        // "countOf": 0,
+        // "avAge": 0
+        // }
+      ]
     };
     _this.populateData = _this.populateData.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
@@ -23667,7 +23668,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56610" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54111" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
