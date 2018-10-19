@@ -23310,19 +23310,22 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var data = this.props.data;
-      var row = data.map(function (data, index) {
+      var row = data.map(function (data) {
         return _react.default.createElement("tr", {
           className: "striped--light-gray tl",
-          key: index
+          key: data.name
         }, _react.default.createElement("td", {
           className: "pv2 ph3",
-          key: data.name
+          key: data.name + '_td',
+          value: data.name
         }, data.name), _react.default.createElement("td", {
           className: "pv2 ph3",
-          key: data.countOf
+          key: data.countOf + '_td',
+          value: data.countOf
         }, data.countOf), _react.default.createElement("td", {
           className: "pv2 ph3",
-          key: data.avAge
+          key: data.avAge + '_td',
+          value: data.avAge
         }, data.avAge));
       });
       return row;
@@ -23418,7 +23421,8 @@ function (_React$Component) {
       return _react.default.createElement("div", null, _react.default.createElement("table", {
         className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
       }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
-        className: "striped--light-gray bb b-moon-gray"
+        className: "striped--light-gray bb b-moon-gray",
+        key: "header"
       }, _react.default.createElement("th", {
         className: "pv2 ph3 tl f6 fw6 ttu"
       }, "Variable Type"), _react.default.createElement("th", {
@@ -23663,7 +23667,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57820" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55172" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

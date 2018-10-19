@@ -4,11 +4,11 @@ class ResultsTableRow extends React.Component {
 
   render() {
     const { data } = this.props;
-    const row = data.map((data, index) =>
-    <tr className='striped--light-gray tl' key={index}>
-      <td className='pv2 ph3' key={data.name}>{data.name}</td>
-      <td className='pv2 ph3' key={data.countOf}>{data.countOf}</td>
-      <td className='pv2 ph3' key={data.avAge}>{data.avAge}</td>
+    const row = data.map((data) =>
+    <tr className='striped--light-gray tl' key={data.name}>
+      <td className='pv2 ph3' key={data.name + '_td'} value={data.name}>{data.name}</td>
+      <td className='pv2 ph3' key={data.countOf + '_td'} value={data.countOf}>{data.countOf}</td>
+      <td className='pv2 ph3' key={data.avAge + '_td'} value={data.avAge}>{data.avAge}</td>
     </tr>
     );
 
