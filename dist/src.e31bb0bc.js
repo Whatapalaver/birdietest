@@ -23290,31 +23290,53 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var BASE_PATH = 'http://localhost:8082/api/data/';
+
 var ResultsTable =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(ResultsTable, _React$Component);
 
-  function ResultsTable() {
+  function ResultsTable(props) {
+    var _this;
+
     _classCallCheck(this, ResultsTable);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ResultsTable).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ResultsTable).call(this, props));
+    _this.state = {
+      data: []
+    };
+    _this.populateData = _this.populateData.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
   }
 
   _createClass(ResultsTable, [{
+    key: "populateData",
+    value: function populateData(data) {
+      this.setState({
+        data: data
+      });
+    } // componentDidMount() {
+    //   let URL = 'http://localhost:8082/api/data/education'
+    //   fetch(URL)
+    //   .then(response => response.json())
+    //   .then(console.log('response', response))
+    //   .then(data => this.populateData(data))
+    //   .catch(error => error);
+    // }
+
+  }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          fieldName = _this$props.fieldName,
-          onChange = _this$props.onChange;
+      // const { fieldName, onChange } = this.props;
       return _react.default.createElement("div", null, _react.default.createElement("table", {
         className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
       }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
@@ -23350,6 +23372,80 @@ function (_React$Component) {
 
 var _default = ResultsTable;
 exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"components/ErrorBoundary.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var ErrorBoundary =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ErrorBoundary, _React$Component);
+
+  function ErrorBoundary(props) {
+    var _this;
+
+    _classCallCheck(this, ErrorBoundary);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ErrorBoundary).call(this, props));
+    _this.state = {
+      hasError: false
+    };
+    return _this;
+  }
+
+  _createClass(ErrorBoundary, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error, info) {
+      // Display fallback UI
+      this.setState({
+        hasError: true
+      }); // You can also log the error to an error reporting service
+
+      logErrorToMyService(error, info);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.hasError) {
+        // You can render any custom fallback UI
+        return _react.default.createElement("h1", null, "Something went wrong.");
+      }
+
+      return this.props.children;
+    }
+  }]);
+
+  return ErrorBoundary;
+}(_react.default.Component);
+
+var _default = ErrorBoundary;
+exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"components/FieldSelector.js":[function(require,module,exports) {
 "use strict";
 
@@ -23361,6 +23457,8 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _ResultsTable = _interopRequireDefault(require("./ResultsTable"));
+
+var _ErrorBoundary = _interopRequireDefault(require("./ErrorBoundary"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23444,9 +23542,9 @@ function (_React$Component) {
           key: index,
           value: field.Column_name
         }, field.Column_name);
-      }), ";"), _react.default.createElement(_ResultsTable.default, {
+      }), ";"), _react.default.createElement(_ErrorBoundary.default, null, _react.default.createElement(_ResultsTable.default, {
         fieldName: this.state.value
-      }));
+      })));
     }
   }]);
 
@@ -23455,7 +23553,111 @@ function (_React$Component) {
 
 var _default = FieldSelector;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./ResultsTable":"components/ResultsTable.js"}],"components/App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./ResultsTable":"components/ResultsTable.js","./ErrorBoundary":"components/ErrorBoundary.js"}],"components/TestTable.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var BASE_PATH = 'http://localhost:8082/api/data/';
+
+var ResultsTable =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ResultsTable, _React$Component);
+
+  function ResultsTable(props) {
+    var _this;
+
+    _classCallCheck(this, ResultsTable);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ResultsTable).call(this, props));
+    _this.state = {
+      data: []
+    };
+    _this.populateData = _this.populateData.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(ResultsTable, [{
+    key: "populateData",
+    value: function populateData(data) {
+      this.setState({
+        data: data
+      });
+    } // componentDidMount() {
+    //   let URL = 'http://localhost:8082/api/data/education'
+    //   fetch(URL)
+    //   .then(response => response.json())
+    //   .then(console.log('response', response))
+    //   .then(data => this.populateData(data))
+    //   .catch(error => error);
+    // }
+
+  }, {
+    key: "render",
+    value: function render() {
+      // const { fieldName, onChange } = this.props;
+      return _react.default.createElement("div", null, _react.default.createElement("table", {
+        className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
+      }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
+        className: "striped--light-gray bb b-moon-gray"
+      }, _react.default.createElement("th", {
+        className: "pv2 ph3 tl f6 fw6 ttu"
+      }, "Variable Type"), _react.default.createElement("th", {
+        className: "pv2 ph3 tl f6 fw6 ttu"
+      }, "Record Count"), _react.default.createElement("th", {
+        className: "pv2 ph3 tl f6 fw6 ttu"
+      }, "Average Age")), _react.default.createElement("tr", {
+        className: "striped--light-gray"
+      }, _react.default.createElement("td", {
+        className: "pv2 ph3"
+      }, "Degree Level"), _react.default.createElement("td", {
+        className: "pv2 ph3"
+      }, "4567"), _react.default.createElement("td", {
+        className: "pv2 ph3"
+      }, "33")), _react.default.createElement("tr", {
+        className: "striped--light-gray"
+      }, _react.default.createElement("td", {
+        className: "pv2 ph3"
+      }, "Postgraduate Level"), _react.default.createElement("td", {
+        className: "pv2 ph3"
+      }, "1267"), _react.default.createElement("td", {
+        className: "pv2 ph3"
+      }, "44")))));
+    }
+  }]);
+
+  return ResultsTable;
+}(_react.default.Component);
+
+var _default = TestTable;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23472,6 +23674,10 @@ var _Navbar = _interopRequireDefault(require("./Navigation/Navbar"));
 var _Footer = _interopRequireDefault(require("./Footer"));
 
 var _FieldSelector = _interopRequireDefault(require("./FieldSelector"));
+
+var _ErrorBoundary = _interopRequireDefault(require("./ErrorBoundary"));
+
+var _TestTable = _interopRequireDefault(require("./TestTable"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23513,7 +23719,7 @@ function (_Component) {
         className: "tc dark-red bg-washed-green pa2"
       }, _react.default.createElement("h2", {
         className: "mt1 mb0 avenir i f1 pt2 fw6"
-      }, "Birdie Tech Test"), _react.default.createElement(_Navbar.default, null), _react.default.createElement(_FieldSelector.default, null), _react.default.createElement(_Footer.default, null));
+      }, "Birdie Tech Test"), _react.default.createElement(_Navbar.default, null), _react.default.createElement(_ErrorBoundary.default, null, _react.default.createElement(_FieldSelector.default, null)), _react.default.createElement(_TestTable.default, null), _react.default.createElement(_Footer.default, null));
     }
   }]);
 
@@ -23522,7 +23728,7 @@ function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./App.css":"components/App.css","./Navigation/Navbar":"components/Navigation/Navbar.js","./Footer":"components/Footer.js","./FieldSelector":"components/FieldSelector.js"}],"../node_modules/tachyons/css/tachyons.css":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./App.css":"components/App.css","./Navigation/Navbar":"components/Navigation/Navbar.js","./Footer":"components/Footer.js","./FieldSelector":"components/FieldSelector.js","./ErrorBoundary":"components/ErrorBoundary.js","./TestTable":"components/TestTable.js"}],"../node_modules/tachyons/css/tachyons.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -23575,7 +23781,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59502" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64533" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

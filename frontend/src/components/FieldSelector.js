@@ -8,7 +8,9 @@ class FieldSelector extends React.Component {
     super(props);
     this.state = {
       value: 'education',
-      fields: []
+      fields: [{
+        "Column_name": "education"
+        }]
     };
     this.handleChange = this.handleChange.bind(this);
     this.populateFields = this.populateFields.bind(this);
@@ -35,7 +37,6 @@ class FieldSelector extends React.Component {
       <div>
         <select className="hot-pink bg-washed-yellow fw6"
           value={this.state.value}
-          
           onChange={this.handleChange}>
           {options.map((field, index) =>
             <option key={index} value={field.Column_name}>{field.Column_name}</option>

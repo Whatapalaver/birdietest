@@ -22198,14 +22198,11 @@ var Navbar = function Navbar() {
     className: "black-80 tc pv4 avenir dark-red"
   }, _react.default.createElement("h1", {
     className: "mt2 mb0 baskerville i fw1 f1"
-  }, "Census Statistics"), _react.default.createElement("h2", {
-    className: "mt2 mb0 f6 fw4 ttu tracked"
-  }, "Angela Wolff"), _react.default.createElement("nav", {
+  }, "Census Statistics"), _react.default.createElement("nav", {
     className: "bg-light-gray bt b--moon-gray bb tc center mt4"
-  }, _react.default.createElement("a", {
-    className: "f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l",
-    href: "/"
-  }, "Home"), _react.default.createElement("a", {
+  }, _react.default.createElement("p", {
+    className: "f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa1 ph4-l"
+  }, "Angela Wolff --->"), _react.default.createElement("a", {
     className: "f6 f5-l link bg-animate black-80 hover-bg-light-yellow dib pa3 ph4-l",
     href: "https://github.com/Whatapalaver/CV/blob/master/README.md"
   }, "CV"))));
@@ -23268,7 +23265,7 @@ var Footer = function Footer(props) {
 
 var _default = Footer;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-social-icons":"../node_modules/react-social-icons/lib/react-social-icons.js"}],"components/FieldSelector.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-social-icons":"../node_modules/react-social-icons/lib/react-social-icons.js"}],"components/ResultsTableRow.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23290,6 +23287,77 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var ResultsTableRow =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ResultsTableRow, _React$Component);
+
+  function ResultsTableRow() {
+    _classCallCheck(this, ResultsTableRow);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ResultsTableRow).apply(this, arguments));
+  }
+
+  _createClass(ResultsTableRow, [{
+    key: "render",
+    value: function render() {
+      var data = this.props.data;
+      var row = data.map(function (data, index) {
+        return _react.default.createElement("tr", {
+          className: "striped--light-gray tl",
+          key: index
+        }, _react.default.createElement("td", {
+          className: "pv2 ph3",
+          key: data.name
+        }, data.name), _react.default.createElement("td", {
+          className: "pv2 ph3",
+          key: data.countOf
+        }, data.countOf), _react.default.createElement("td", {
+          className: "pv2 ph3",
+          key: data.avAge
+        }, data.avAge));
+      });
+      return row;
+    }
+  }]);
+
+  return ResultsTableRow;
+}(_react.default.Component);
+
+var _default = ResultsTableRow;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"components/ResultsTable.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ResultsTableRow = _interopRequireDefault(require("./ResultsTableRow"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -23298,11 +23366,109 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-var URL = 'http://localhost:8082/api/fields'; // const options = [
-//   { value: 'education', label: 'Education' },
-//   { value: 'sex', label: 'Sex' },
-//   { value: 'employment', label: 'Employment'},
-// ];
+var BASE_PATH = 'http://localhost:8082/api/data/';
+
+var ResultsTable =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ResultsTable, _React$Component);
+
+  function ResultsTable(props) {
+    var _this;
+
+    _classCallCheck(this, ResultsTable);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ResultsTable).call(this, props));
+    _this.state = {
+      data: [{
+        "name": "Loading......",
+        "countOf": 0,
+        "avAge": 0
+      }]
+    };
+    _this.populateData = _this.populateData.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(ResultsTable, [{
+    key: "populateData",
+    value: function populateData(data) {
+      this.setState({
+        data: data
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var URL = "".concat(BASE_PATH).concat(this.props.fieldName);
+      fetch(URL).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        return _this2.populateData(data);
+      }).catch(function (error) {
+        return error;
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      // const options = this.state.data
+      return _react.default.createElement("div", null, _react.default.createElement("table", {
+        className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
+      }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
+        className: "striped--light-gray bb b-moon-gray"
+      }, _react.default.createElement("th", {
+        className: "pv2 ph3 tl f6 fw6 ttu"
+      }, "Variable Type"), _react.default.createElement("th", {
+        className: "pv2 ph3 tl f6 fw6 ttu"
+      }, "Record Count"), _react.default.createElement("th", {
+        className: "pv2 ph3 tl f6 fw6 ttu"
+      }, "Average Age")), _react.default.createElement(_ResultsTableRow.default, {
+        data: this.state.data
+      }))));
+    }
+  }]);
+
+  return ResultsTable;
+}(_react.default.Component);
+
+var _default = ResultsTable;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","./ResultsTableRow":"components/ResultsTableRow.js"}],"components/FieldSelector.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _ResultsTable = _interopRequireDefault(require("./ResultsTable"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var URL = 'http://localhost:8082/api/fields';
 
 var FieldSelector =
 /*#__PURE__*/
@@ -23317,7 +23483,9 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(FieldSelector).call(this, props));
     _this.state = {
       value: 'education',
-      fields: []
+      fields: [{
+        "Column_name": "education"
+      }]
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.populateFields = _this.populateFields.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -23355,16 +23523,18 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var options = this.state.fields;
-      return _react.default.createElement("select", {
+      return _react.default.createElement("div", null, _react.default.createElement("select", {
         className: "hot-pink bg-washed-yellow fw6",
         value: this.state.value,
         onChange: this.handleChange
-      }, options.map(function (field) {
+      }, options.map(function (field, index) {
         return _react.default.createElement("option", {
-          key: field.key,
-          value: field.index
+          key: index,
+          value: field.Column_name
         }, field.Column_name);
-      }), ";");
+      }), ";"), _react.default.createElement(_ResultsTable.default, {
+        fieldName: this.state.value
+      }));
     }
   }]);
 
@@ -23373,51 +23543,7 @@ function (_React$Component) {
 
 var _default = FieldSelector;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/ResultsTable.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ResultsTable = function ResultsTable() {
-  return _react.default.createElement("div", null, _react.default.createElement("table", {
-    className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
-  }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
-    className: "striped--light-gray bb b-moon-gray"
-  }, _react.default.createElement("th", {
-    className: "pv2 ph3 tl f6 fw6 ttu"
-  }, "Variable Type"), _react.default.createElement("th", {
-    className: "pv2 ph3 tl f6 fw6 ttu"
-  }, "Record Count"), _react.default.createElement("th", {
-    className: "pv2 ph3 tl f6 fw6 ttu"
-  }, "Average Age")), _react.default.createElement("tr", {
-    className: "striped--light-gray"
-  }, _react.default.createElement("td", {
-    className: "pv2 ph3"
-  }, "Degree Level"), _react.default.createElement("td", {
-    className: "pv2 ph3"
-  }, "4567"), _react.default.createElement("td", {
-    className: "pv2 ph3"
-  }, "33")), _react.default.createElement("tr", {
-    className: "striped--light-gray"
-  }, _react.default.createElement("td", {
-    className: "pv2 ph3"
-  }, "Postgraduate Level"), _react.default.createElement("td", {
-    className: "pv2 ph3"
-  }, "1267"), _react.default.createElement("td", {
-    className: "pv2 ph3"
-  }, "44")))));
-};
-
-var _default = ResultsTable;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./ResultsTable":"components/ResultsTable.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23434,8 +23560,6 @@ var _Navbar = _interopRequireDefault(require("./Navigation/Navbar"));
 var _Footer = _interopRequireDefault(require("./Footer"));
 
 var _FieldSelector = _interopRequireDefault(require("./FieldSelector"));
-
-var _ResultsTable = _interopRequireDefault(require("./ResultsTable"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23477,7 +23601,7 @@ function (_Component) {
         className: "tc dark-red bg-washed-green pa2"
       }, _react.default.createElement("h2", {
         className: "mt1 mb0 avenir i f1 pt2 fw6"
-      }, "Birdie Tech Test"), _react.default.createElement(_Navbar.default, null), _react.default.createElement(_FieldSelector.default, null), _react.default.createElement(_ResultsTable.default, null), _react.default.createElement(_Footer.default, null));
+      }, "Birdie Tech Test"), _react.default.createElement(_Navbar.default, null), _react.default.createElement(_FieldSelector.default, null), _react.default.createElement(_Footer.default, null));
     }
   }]);
 
@@ -23486,7 +23610,7 @@ function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./App.css":"components/App.css","./Navigation/Navbar":"components/Navigation/Navbar.js","./Footer":"components/Footer.js","./FieldSelector":"components/FieldSelector.js","./ResultsTable":"components/ResultsTable.js"}],"../node_modules/tachyons/css/tachyons.css":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./App.css":"components/App.css","./Navigation/Navbar":"components/Navigation/Navbar.js","./Footer":"components/Footer.js","./FieldSelector":"components/FieldSelector.js"}],"../node_modules/tachyons/css/tachyons.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -23539,7 +23663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50360" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57820" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
