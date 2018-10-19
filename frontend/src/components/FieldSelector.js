@@ -35,7 +35,7 @@ class FieldSelector extends React.Component {
     const options = this.state.fields
     return (
       <div>
-        <select className="hot-pink bg-washed-yellow fw6"
+        <select className="hot-pink bg-washed-yellow fw6 tc"
           value={this.state.value}
           onChange={this.handleChange}>
           {options.map((field, index) =>

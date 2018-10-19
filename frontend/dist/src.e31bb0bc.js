@@ -23319,11 +23319,11 @@ function (_React$Component) {
           key: data.name + '_td',
           value: data.name
         }, data.name), _react.default.createElement("td", {
-          className: "pv2 ph3",
+          className: "pv2 ph3 tr",
           key: data.countOf + '_td',
           value: data.countOf
         }, data.countOf), _react.default.createElement("td", {
-          className: "pv2 ph3",
+          className: "pv2 ph3 tr",
           key: data.avAge + '_td',
           value: data.avAge
         }, data.avAge));
@@ -23401,11 +23401,11 @@ function (_React$Component) {
       });
     }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
       var _this2 = this;
 
-      var URL = "".concat(BASE_PATH).concat(this.props.fieldName);
+      var URL = "".concat(BASE_PATH, "`").concat(this.props.fieldName, "`");
       fetch(URL).then(function (response) {
         return response.json();
       }).then(function (data) {
@@ -23421,7 +23421,7 @@ function (_React$Component) {
       return _react.default.createElement("div", null, _react.default.createElement("table", {
         className: "collapse ba br2 bg-near-white b--moon-gray pv3 ph3 dib mt2 avenir hot-pink bg-washed-yellow"
       }, _react.default.createElement("tbody", null, _react.default.createElement("tr", {
-        className: "striped--light-gray bb b-moon-gray",
+        className: "stripe-dark bb b-moon-gray",
         key: "header"
       }, _react.default.createElement("th", {
         className: "pv2 ph3 tl f6 fw6 ttu"
@@ -23528,7 +23528,7 @@ function (_React$Component) {
     value: function render() {
       var options = this.state.fields;
       return _react.default.createElement("div", null, _react.default.createElement("select", {
-        className: "hot-pink bg-washed-yellow fw6",
+        className: "hot-pink bg-washed-yellow fw6 tc",
         value: this.state.value,
         onChange: this.handleChange
       }, options.map(function (field, index) {
@@ -23667,7 +23667,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55172" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56610" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
