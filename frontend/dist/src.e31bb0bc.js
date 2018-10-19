@@ -23298,16 +23298,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-var options = [{
-  value: 'education',
-  label: 'Education'
-}, {
-  value: 'sex',
-  label: 'Sex'
-}, {
-  value: 'employment',
-  label: 'Employment'
-}];
+var URL = 'http://localhost:8082/api/fields'; // const options = [
+//   { value: 'education', label: 'Education' },
+//   { value: 'sex', label: 'Sex' },
+//   { value: 'employment', label: 'Employment'},
+// ];
 
 var FieldSelector =
 /*#__PURE__*/
@@ -23325,6 +23320,7 @@ function (_React$Component) {
       fields: []
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.populateFields = _this.populateFields.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -23336,8 +23332,29 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "populateFields",
+    value: function populateFields(fields) {
+      this.setState({
+        fields: fields
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch(URL).then(function (response) {
+        return response.json();
+      }).then(function (fields) {
+        return _this2.populateFields(fields);
+      }).catch(function (error) {
+        return error;
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var options = this.state.fields;
       return _react.default.createElement("select", {
         className: "hot-pink bg-washed-yellow fw6",
         value: this.state.value,
@@ -23345,8 +23362,8 @@ function (_React$Component) {
       }, options.map(function (field) {
         return _react.default.createElement("option", {
           key: field.key,
-          value: field.value
-        }, field.value);
+          value: field.index
+        }, field.Column_name);
       }), ";");
     }
   }]);
@@ -23522,7 +23539,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51086" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50360" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
