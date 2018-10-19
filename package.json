@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nf start",
     "backend": "nodemon backend/bin/server",
-    "frontend": "parcel frontend/src/index.html"
+    "frontend": "parcel frontend/src/index.html",
+    "heroku-postbuild": "cd backend && npm install && cd ../frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
     "type": "git",
