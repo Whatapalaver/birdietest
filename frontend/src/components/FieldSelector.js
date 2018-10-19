@@ -1,4 +1,5 @@
 import React from 'react'
+import ResultsTable from './ResultsTable';
 
 const URL = 'http://localhost:8082/api/fields'
 
@@ -31,14 +32,17 @@ class FieldSelector extends React.Component {
   render() {
     const options = this.state.fields
     return (
-      <select className="hot-pink bg-washed-yellow fw6"
-        value={this.state.value}
-        
-        onChange={this.handleChange}>
-        {options.map((field, index) =>
-          <option key={index} value={field.Column_name}>{field.Column_name}</option>
-          )};
-      </select>
+      <div>
+        <select className="hot-pink bg-washed-yellow fw6"
+          value={this.state.value}
+          
+          onChange={this.handleChange}>
+          {options.map((field, index) =>
+            <option key={index} value={field.Column_name}>{field.Column_name}</option>
+            )};
+        </select>
+        <ResultsTable fieldName={this.state.value}/>
+      </div>
     );
   }
 }
