@@ -6,7 +6,9 @@
   "scripts": {
     "clean": "rm -rf dist .cache",
     "start": "npm run clean && parcel src/index.html",
-    "dev": "npm run start"
+    "dev": "npm run start",
+    "test": "jest"
+    
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,13 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "react-social-icons": "^3.0.0"
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest": "^23.6.0",
+    "react-social-icons": "^3.0.0",
+    "react-test-renderer": "^16.5.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/setupTests.js"
   }
 }
