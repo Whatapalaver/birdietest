@@ -10,12 +10,18 @@ let cors = require('cors');
 // replace with an app.use which will direct to the new api router
 
 connection.connect();
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '/../frontend/build')));
+
 app.use(cors())
 app.use('/api/data', dataAPI)
 app.use('/api/fields', fieldAPI)
 
-  // Serve the static files from the React app
-  app.use(express.static(path.join(__dirname, '/../frontend/build')));
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 app.use(function(err, req, res, next){
   // we send the error with an error message
