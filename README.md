@@ -1,6 +1,8 @@
 Birdie Tech Test
 =========
 
+Finished project hosted on [Heroku](https://birdie-tech-test.herokuapp.com/)
+
 A database visualisation exercise
 -----
 
@@ -13,6 +15,17 @@ A database visualisation exercise
 5. Must be a single page application with no reload required as variable selected
 
 ![Birdie Tech test Implementation](Birdie_tech_test.png)
+
+Quickstart
+====
+How to install the code:
+
+- Clone this project git clone https://github.com/Whatapalaver/birdietest
+- Change into the directory `cd birdietest`
+- The project is split into frontend and backend folders which are self contained so to quickly install all dependencies run `npm run install:all`
+- To run tests you need to cd into the relevant folder and run npm run test
+- To start the local server cd into frontend and run `npm start`
+- You can also test the hosted app on [Heroku](https://birdie-tech-test.herokuapp.com/)
 
 Review Goals
 -----

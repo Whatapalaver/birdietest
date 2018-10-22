@@ -1,19 +1,13 @@
 import React from 'react'
 import ResultsTableRow from './ResultsTableRow';
 
-const BASE_PATH = 'http://localhost:8082/api/data/'
+const BASE_PATH = 'https://birdie-tech-test.herokuapp.com/api/data/'
 
 class ResultsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        // {
-        // "name": "Loading......",
-        // "countOf": 0,
-        // "avAge": 0
-        // }
-      ]
+      data: []
     };
     
     this.populateData = this.populateData.bind(this);

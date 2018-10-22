@@ -1,5 +1,15 @@
+if (process.env.NODE_ENV !== 'production'){
+  require('dotenv').load();
+}
+
 const mysql = require('mysql');
-const databaseConfiguration = require('./secrets/databaseConfiguration');
+const databaseConfiguration = {
+  host     : process.env.BIRDIE_HOST,
+  user     : process.env.BIRDIE_USER,
+  password : process.env.BIRDIE_PASSWORD,
+  database : process.env.BIRDIE_DATABASE,
+  port: 3306
+};
 const connection = mysql.createConnection(databaseConfiguration);
 
 // connection.connect()

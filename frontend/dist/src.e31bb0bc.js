@@ -23369,7 +23369,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-var BASE_PATH = 'http://localhost:8082/api/data/';
+var BASE_PATH = 'https://birdie-tech-test.herokuapp.com/api/data/';
 
 var ResultsTable =
 /*#__PURE__*/
@@ -23383,12 +23383,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ResultsTable).call(this, props));
     _this.state = {
-      data: [// {
-        // "name": "Loading......",
-        // "countOf": 0,
-        // "avAge": 0
-        // }
-      ]
+      data: []
     };
     _this.populateData = _this.populateData.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
@@ -23473,7 +23468,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-var URL = 'http://localhost:8082/api/fields';
+var URL = 'https://birdie-tech-test.herokuapp.com/api/fields';
 
 var FieldSelector =
 /*#__PURE__*/
@@ -23668,7 +23663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54111" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53537" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
