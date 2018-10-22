@@ -1,7 +1,7 @@
 import React from 'react'
 import ResultsTable from './ResultsTable';
 
-const URL = 'http://localhost:8082/api/fields'
+const URL = 'https://birdie-tech-test.herokuapp.com/api/fields'
 
 class FieldSelector extends React.Component {
   constructor(props) {
