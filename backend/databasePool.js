@@ -1,4 +1,7 @@
-require('dotenv').load({ silent: true });
+if (process.env.NODE_ENV !== 'production'){
+  require('dotenv').load();
+}
+
 const mysql = require('mysql');
 const databaseConfiguration = {
   host     : process.env.BIRDIE_HOST,
