@@ -4,6 +4,9 @@
   "description": "Birdie Tech Test =========",
   "main": "index.js",
   "scripts": {
+    "install:all": "npm install && npm run install:backend && npm run install:frontend",
+    "install:frontend": "cd ./frontend && npm install",
+    "install:backend": "cd ./frontend && npm install",
     "start": "cd backend && npm start && cd ../frontend && npm start",
     "backend": "nodemon backend/bin/server",
     "frontend": "parcel frontend/src/index.html",
@@ -21,6 +24,7 @@
   },
   "homepage": "https://github.com/Whatapalaver/birdietest#readme",
   "dependencies": {
+    "all": "0.0.0",
     "dotenv": "^6.1.0"
   }
 }
