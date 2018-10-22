@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').load({ silent: true });
 const mysql = require('mysql');
 const databaseConfiguration = {
   host     : process.env.BIRDIE_HOST,
