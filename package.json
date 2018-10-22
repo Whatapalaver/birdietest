@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Whatapalaver/birdietest/issues"
   },
-  "homepage": "https://github.com/Whatapalaver/birdietest#readme"
+  "homepage": "https://github.com/Whatapalaver/birdietest#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0"
+  }
 }

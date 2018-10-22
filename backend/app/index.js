@@ -13,6 +13,9 @@ app.use(cors())
 app.use('/api/data', dataAPI)
 app.use('/api/fields', fieldAPI)
 
+  // Serve the static files from the React app
+  app.use(express.static(path.join(__dirname, '/../frontend/build')));
+
 app.use(function(err, req, res, next){
   // we send the error with an error message
   res.status(422).send({error: err.message});
