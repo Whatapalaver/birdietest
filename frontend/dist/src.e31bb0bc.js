@@ -23328,7 +23328,29 @@ function (_React$Component) {
           value: data.avAge
         }, data.avAge));
       });
-      return row;
+
+      var loading = _react.default.createElement("tr", {
+        className: "striped--light-gray tl",
+        key: "loading"
+      }, _react.default.createElement("td", {
+        className: "pv2 ph3",
+        key: "loading0",
+        value: "loading"
+      }, "Loading....."), _react.default.createElement("td", {
+        className: "pv2 ph3 tr",
+        key: "loading000",
+        value: "0"
+      }, "0"), _react.default.createElement("td", {
+        className: "pv2 ph3 tr",
+        key: "loading001",
+        value: "0"
+      }, "0"));
+
+      if (data.length === 0) {
+        return loading;
+      } else {
+        return row;
+      }
     }
   }]);
 
@@ -23663,7 +23685,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53537" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59331" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
