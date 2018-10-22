@@ -7,7 +7,7 @@
     "start": "cd backend && npm start && cd ../frontend && npm start",
     "backend": "nodemon backend/bin/server",
     "frontend": "parcel frontend/src/index.html",
-    "heroku-postbuild": "npm install && cd frontend && npm install && parcel build src/index.html && cd ../backend && npm install"
+    "heroku-postbuild": "npm install && cd frontend && npm install && cd ../backend && npm install"
   },
   "repository": {
     "type": "git",
