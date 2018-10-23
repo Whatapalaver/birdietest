@@ -8,12 +8,13 @@
     "start": "npm run clean && parcel src/index.html",
     "dev": "npm run start",
     "test": "jest"
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "tachyons": "^4.11.1"

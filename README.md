@@ -6,6 +6,8 @@ Finished project hosted on [Heroku](https://birdie-tech-test.herokuapp.com/)
 A database visualisation exercise
 -----
 
+*Required Features:*
+
 1. Variable (field within db table) should be user selectable
 2. Statistics should be displayed for variable selected:
   - count of records
@@ -23,7 +25,7 @@ How to install the code:
 - Clone this project git clone https://github.com/Whatapalaver/birdietest
 - Change into the directory `cd birdietest`
 - The project is split into frontend and backend folders which are self contained so to quickly install all dependencies run `npm run install:all`
-- To run tests you need to cd into the relevant folder and run npm run test
+- To run tests you need to cd into the frontend folder and run `npm run test`
 - To start the local server cd into frontend and run `npm start`
 - You can also test the hosted app on [Heroku](https://birdie-tech-test.herokuapp.com/)
 

@@ -6,11 +6,8 @@ const connection = require('./databasePool');
 const path = require('path')
 let cors = require('cors');
 
-app.use(cors())
-// move this to the api folder when you have a better idea of api structure
-// replace with an app.use which will direct to the new api router
-
 connection.connect();
+app.use(cors())
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '/../frontend/dist')));
 
